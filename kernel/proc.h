@@ -103,4 +103,43 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+
+  int interval;                // Alarm interval of sigsalarm
+  void (*handler)();           // Pointer to the handler function of sigalarm
+  int ticks;                   // Ticks have passed since the last call to handler
+  int is_handling;             // Prevent re-entrant calls to the handler
+
+  uint64 epc;
+
+  uint64 ra;
+  uint64 sp;
+  uint64 gp;
+  uint64 tp;
+  uint64 t0;
+  uint64 t1;
+  uint64 t2;
+  uint64 s0;
+  uint64 s1;
+  uint64 a0;
+  uint64 a1;
+  uint64 a2;
+  uint64 a3;
+  uint64 a4;
+  uint64 a5;
+  uint64 a6;
+  uint64 a7;
+  uint64 s2;
+  uint64 s3;
+  uint64 s4;
+  uint64 s5;
+  uint64 s6;
+  uint64 s7;
+  uint64 s8;
+  uint64 s9;
+  uint64 s10;
+  uint64 s11;
+  uint64 t3;
+  uint64 t4;
+  uint64 t5;
+  uint64 t6;
 };
